@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1180" role="img" aria-labelledby="title description">
+  <title id="title">Free Games Explorer project structure</title>
+  <desc id="description">Proposed Vanilla JavaScript and MVC project structure, including folders, file responsibilities, and module relationships.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#61c9d8" />
+    </marker>
+    <style>
+      .background { fill: #111217; }
+      .panel { fill: #191a22; stroke: #2c2e3b; stroke-width: 1.5; }
+      .title { fill: #f3f1fa; font: 700 27px Arial, sans-serif; letter-spacing: 0.6px; }
+      .subtitle { fill: #9c9dab; font: 14px Arial, sans-serif; }
+      .panel-title { fill: #c7b5ff; font: 700 12px Arial, sans-serif; letter-spacing: 1.5px; }
+      .tree { fill: #e7e5ef; font: 16px Consolas, "Courier New", monospace; }
+      .tree-muted { fill: #a4a4b2; }
+      .card { fill: #22242d; stroke: #3a3d4c; stroke-width: 1.5; }
+      .card-main { fill: #29243a; stroke: #9272d4; stroke-width: 1.8; }
+      .card-model { fill: #202c33; stroke: #55a9bb; stroke-width: 1.8; }
+      .card-service { fill: #202d2b; stroke: #59a98c; stroke-width: 1.8; }
+      .card-view { fill: #242532; stroke: #6c78b4; stroke-width: 1.5; }
+      .file { fill: #f3f1fa; font: 700 14px Arial, sans-serif; }
+      .detail { fill: #b7b7c4; font: 12px Arial, sans-serif; }
+      .group-label { fill: #9294a4; font: 700 10px Arial, sans-serif; letter-spacing: 1.3px; }
+      .edge { fill: none; stroke: #61c9d8; stroke-width: 1.8; marker-end: url(#arrow); }
+      .edge-soft { fill: none; stroke: #8f79c8; stroke-width: 1.7; marker-end: url(#arrow); }
+      .edge-label { fill: #aaaaba; font: 11px Arial, sans-serif; }
+      .footer { fill: #777989; font: 12px Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="background" width="1600" height="1180" rx="18" />
+  <text class="title" x="48" y="52">FREE GAMES EXPLORER — PROJECT STRUCTURE</text>
+  <text class="subtitle" x="48" y="78">A small, MVC-inspired Vanilla JavaScript setup for the MVP</text>
+
+  <rect class="panel" x="40" y="108" width="565" height="1018" rx="14" />
+  <text class="panel-title" x="70" y="148">PROPOSED FILE TREE</text>
+  <text class="tree" x="72" y="192">
+    <tspan x="72" dy="0">free-games-explorer/</tspan>
+    <tspan x="72" dy="29" class="tree-muted">|-- index.html</tspan>
+    <tspan x="72" dy="29" class="tree-muted">|-- styles.css</tspan>
+    <tspan x="72" dy="29" class="tree-muted">|-- package.json</tspan>
+    <tspan x="72" dy="29" class="tree-muted">`-- src/</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |-- main.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |-- config.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |-- controller.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |-- model.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |-- helpers.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |-- services/</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |   |-- apiService.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    |   `-- storageService.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">    `-- views/</tspan>
+    <tspan x="72" dy="29" class="tree-muted">        |-- gamesView.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">        |-- gameDetailsView.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">        |-- searchView.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">        |-- filtersView.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">        |-- paginationView.js</tspan>
+    <tspan x="72" dy="29" class="tree-muted">        `-- favoritesView.js</tspan>
+  </text>
+  <line x1="70" y1="835" x2="575" y2="835" stroke="#30323e" />
+  <text class="panel-title" x="70" y="871">KEEP RESPONSIBILITIES SEPARATE</text>
+  <text class="detail" x="70" y="903">
+    <tspan x="70" dy="0">config.js holds shared constants, not changing app state.</tspan>
+    <tspan x="70" dy="22">model.js owns the current state and data operations.</tspan>
+    <tspan x="70" dy="22">helpers.js contains small, reusable pure functions.</tspan>
+    <tspan x="70" dy="22">Add view files as features are implemented; avoid</tspan>
+    <tspan x="70" dy="18">creating empty modules just to fill the tree.</tspan>
+  </text>
+  <rect x="70" y="1010" width="505" height="76" rx="9" fill="#20212a" stroke="#373947" />
+  <text class="detail" x="92" y="1040">
+    <tspan x="92">The tree is a proposal, not a requirement to create every file now.</tspan>
+    <tspan x="92" dy="21">Start with the entry point, model, controller, and needed views.</tspan>
+  </text>
+
+  <rect class="panel" x="630" y="108" width="930" height="1018" rx="14" />
+  <text class="panel-title" x="660" y="148">MODULE RESPONSIBILITIES AND FLOW</text>
+
+  <rect class="card-main" x="935" y="180" width="320" height="76" rx="10" />
+  <text class="file" x="1095" y="210" text-anchor="middle">main.js</text>
+  <text class="detail" x="1095" y="232" text-anchor="middle">Entry point; initializes the controller</text>
+
+  <path class="edge" d="M1095 256V294" />
+  <rect class="card-main" x="935" y="294" width="320" height="84" rx="10" />
+  <text class="file" x="1095" y="325" text-anchor="middle">controller.js</text>
+  <text class="detail" x="1095" y="348" text-anchor="middle">Handles UI events and coordinates work</text>
+
+  <path class="edge" d="M1095 378V416" />
+  <rect class="card-model" x="935" y="416" width="320" height="84" rx="10" />
+  <text class="file" x="1095" y="447" text-anchor="middle">model.js</text>
+  <text class="detail" x="1095" y="470" text-anchor="middle">Owns app state, filtering, sorting, and paging</text>
+
+  <path class="edge" d="M935 458H835V583H850" />
+  <path class="edge" d="M1255 458H1370V583H1350" />
+  <text class="edge-label" x="825" y="528">uses</text>
+  <text class="edge-label" x="1376" y="528">uses</text>
+
+  <rect class="card-service" x="670" y="583" width="360" height="94" rx="10" />
+  <text class="file" x="850" y="615" text-anchor="middle">services/apiService.js</text>
+  <text class="detail" x="850" y="638" text-anchor="middle">Fetches games; handles HTTP responses</text>
+  <text class="detail" x="850" y="657" text-anchor="middle">Reads API settings from config.js</text>
+
+  <rect class="card-service" x="1170" y="583" width="360" height="94" rx="10" />
+  <text class="file" x="1350" y="615" text-anchor="middle">services/storageService.js</text>
+  <text class="detail" x="1350" y="638" text-anchor="middle">Reads and writes favorite IDs</text>
+  <text class="detail" x="1350" y="657" text-anchor="middle">in localStorage</text>
+
+  <rect class="card" x="670" y="716" width="360" height="88" rx="10" />
+  <text class="file" x="850" y="748" text-anchor="middle">config.js</text>
+  <text class="detail" x="850" y="771" text-anchor="middle">API base URL, endpoint paths, page size,</text>
+  <text class="detail" x="850" y="789" text-anchor="middle">and the localStorage key</text>
+  <path class="edge-soft" d="M850 716V677" />
+
+  <rect class="card" x="1170" y="716" width="360" height="88" rx="10" />
+  <text class="file" x="1350" y="748" text-anchor="middle">helpers.js</text>
+  <text class="detail" x="1350" y="771" text-anchor="middle">Small shared utilities, such as text</text>
+  <text class="detail" x="1350" y="789" text-anchor="middle">normalization or page-boundary helpers</text>
+  <path class="edge-soft" d="M1255 336H1545V760H1530" />
+  <text class="edge-label" x="1410" y="326">optional shared functions</text>
+
+  <path class="edge-soft" d="M1095 378V840" />
+  <text class="edge-label" x="1107" y="825">updates views</text>
+  <rect class="card-view" x="670" y="840" width="860" height="224" rx="10" />
+  <text class="group-label" x="700" y="870">views/ — DOM RENDERING AND USER EVENTS</text>
+
+  <rect x="700" y="895" width="250" height="58" rx="8" fill="#2a2c39" stroke="#59628f" />
+  <text class="file" x="825" y="920" text-anchor="middle">gamesView.js</text>
+  <text class="detail" x="825" y="940" text-anchor="middle">Game cards and list</text>
+
+  <rect x="975" y="895" width="250" height="58" rx="8" fill="#2a2c39" stroke="#59628f" />
+  <text class="file" x="1100" y="920" text-anchor="middle">searchView.js</text>
+  <text class="detail" x="1100" y="940" text-anchor="middle">Search input events</text>
+
+  <rect x="1250" y="895" width="250" height="58" rx="8" fill="#2a2c39" stroke="#59628f" />
+  <text class="file" x="1375" y="920" text-anchor="middle">filtersView.js</text>
+  <text class="detail" x="1375" y="940" text-anchor="middle">Genre and platform filters</text>
+
+  <rect x="700" y="978" width="250" height="58" rx="8" fill="#2a2c39" stroke="#59628f" />
+  <text class="file" x="825" y="1003" text-anchor="middle">paginationView.js</text>
+  <text class="detail" x="825" y="1023" text-anchor="middle">Page navigation</text>
+
+  <rect x="975" y="978" width="250" height="58" rx="8" fill="#2a2c39" stroke="#59628f" />
+  <text class="file" x="1100" y="1003" text-anchor="middle">gameDetailsView.js</text>
+  <text class="detail" x="1100" y="1023" text-anchor="middle">Selected game details</text>
+
+  <rect x="1250" y="978" width="250" height="58" rx="8" fill="#2a2c39" stroke="#59628f" />
+  <text class="file" x="1375" y="1003" text-anchor="middle">favoritesView.js</text>
+  <text class="detail" x="1375" y="1023" text-anchor="middle">Favorites list and actions</text>
+
+  <text class="footer" x="660" y="1092">Controller coordinates Model and Views; see PROJECT-MODULES.svg for example functions and per-file logic.</text>
+</svg>

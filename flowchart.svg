@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1370" role="img" aria-labelledby="title description">
+  <title id="title">Free Games Explorer application flow</title>
+  <desc id="description">Flowchart showing application startup, loading games, rendering the catalog, and responding to user actions.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#58b9d1" />
+    </marker>
+    <style>
+      .bg { fill: #17171c; }
+      .title { fill: #f2f1f7; font: 700 25px Arial, sans-serif; letter-spacing: 1px; }
+      .subtitle { fill: #a4a4b2; font: 14px Arial, sans-serif; }
+      .node { fill: #26272e; stroke: #427f9c; stroke-width: 2; }
+      .terminal { fill: #242a34; stroke: #58b9d1; stroke-width: 2; }
+      .decision { fill: #292a32; stroke: #58b9d1; stroke-width: 2; }
+      .action { fill: #282632; stroke: #9272d4; stroke-width: 2; }
+      .node-text { fill: #f2f1f7; font: 600 16px Arial, sans-serif; text-anchor: middle; }
+      .small-text { fill: #c2c1cd; font: 13px Arial, sans-serif; text-anchor: middle; }
+      .edge { fill: none; stroke: #58b9d1; stroke-width: 2; marker-end: url(#arrow); }
+      .edge-label { fill: #d7d4e2; font: 13px Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1500" height="1370" rx="18" />
+  <text class="title" x="750" y="38" text-anchor="middle">FREE GAMES EXPLORER — APPLICATION FLOW</text>
+  <text class="subtitle" x="750" y="62" text-anchor="middle">MVC-inspired client-side application</text>
+
+  <rect class="terminal" x="645" y="88" width="210" height="48" rx="24" />
+  <text class="node-text" x="750" y="118">Start application</text>
+
+  <rect class="node" x="520" y="174" width="460" height="64" rx="8" />
+  <text class="node-text" x="750" y="201">
+    <tspan x="750">Model: load favorites</tspan>
+    <tspan class="small-text" x="750" dy="20">from localStorage</tspan>
+  </text>
+
+  <rect class="node" x="520" y="274" width="460" height="64" rx="8" />
+  <text class="node-text" x="750" y="301">
+    <tspan x="750">Model: fetch game catalog</tspan>
+    <tspan class="small-text" x="750" dy="20">from the FreeToGame API</tspan>
+  </text>
+
+  <path class="edge" d="M750 136V174" />
+  <path class="edge" d="M750 238V274" />
+  <path class="edge" d="M750 338V365" />
+
+  <path class="decision" d="M750 365 900 430 750 495 600 430Z" />
+  <text class="node-text" x="750" y="425">
+    <tspan x="750">Did the request</tspan>
+    <tspan x="750" dy="21">succeed?</tspan>
+  </text>
+
+  <path class="edge" d="M750 495V525" />
+  <text class="edge-label" x="765" y="516">Yes</text>
+
+  <rect class="node" x="520" y="525" width="460" height="60" rx="8" />
+  <text class="node-text" x="750" y="561">Model: store games in application state</text>
+
+  <path class="edge" d="M750 585V608" />
+  <rect class="node" x="520" y="608" width="460" height="60" rx="8" />
+  <text class="node-text" x="750" y="644">Controller: prepare the catalog view</text>
+
+  <path class="edge" d="M750 668V691" />
+  <rect class="node" x="520" y="691" width="460" height="60" rx="8" />
+  <text class="node-text" x="750" y="727">Model: apply search, filters, and sorting</text>
+
+  <path class="edge" d="M750 751V774" />
+  <rect class="node" x="520" y="774" width="460" height="60" rx="8" />
+  <text class="node-text" x="750" y="810">Model: select games for the current page</text>
+
+  <path class="edge" d="M750 834V857" />
+  <rect class="node" x="520" y="857" width="460" height="60" rx="8" />
+  <text class="node-text" x="750" y="893">View: render the game list and pagination</text>
+
+  <path class="edge" d="M900 430H1060" />
+  <text class="edge-label" x="982" y="418">No</text>
+  <rect class="node" x="1060" y="392" width="360" height="76" rx="8" />
+  <text class="node-text" x="1240" y="422">
+    <tspan x="1240">View: show an error</tspan>
+    <tspan class="small-text" x="1240" dy="21">and offer a retry</tspan>
+  </text>
+  <path class="edge" d="M1240 392V306H980" />
+  <text class="edge-label" x="1092" y="294">Retry</text>
+
+  <path class="edge" d="M750 917V943" />
+  <path class="decision" d="M750 943 900 1008 750 1073 600 1008Z" />
+  <text class="node-text" x="750" y="1003">
+    <tspan x="750">User</tspan>
+    <tspan x="750" dy="21">action</tspan>
+  </text>
+
+  <path class="edge" d="M750 1073V1100H175V1124" />
+  <path class="edge" d="M750 1100H550V1124" />
+  <path class="edge" d="M750 1100H925V1124" />
+  <path class="edge" d="M750 1100H1300V1124" />
+
+  <rect class="action" x="25" y="1124" width="300" height="142" rx="9" />
+  <text class="node-text" x="175" y="1160">
+    <tspan x="175">Search / filter / sort</tspan>
+    <tspan class="small-text" x="175" dy="25">Update criteria, reset to</tspan>
+    <tspan class="small-text" x="175" dy="20">page one, and render results</tspan>
+  </text>
+
+  <rect class="action" x="400" y="1124" width="300" height="142" rx="9" />
+  <text class="node-text" x="550" y="1160">
+    <tspan x="550">Change page</tspan>
+    <tspan class="small-text" x="550" dy="25">Update the current page</tspan>
+    <tspan class="small-text" x="550" dy="20">and render its games</tspan>
+  </text>
+
+  <rect class="action" x="775" y="1124" width="300" height="142" rx="9" />
+  <text class="node-text" x="925" y="1160">
+    <tspan x="925">Open a game</tspan>
+    <tspan class="small-text" x="925" dy="25">View: show game details</tspan>
+  </text>
+
+  <rect class="action" x="1150" y="1124" width="300" height="142" rx="9" />
+  <text class="node-text" x="1300" y="1160">
+    <tspan x="1300">Toggle favorite</tspan>
+    <tspan class="small-text" x="1300" dy="25">Model: update favorites</tspan>
+    <tspan class="small-text" x="1300" dy="20">and save to localStorage</tspan>
+  </text>
+
+  <text class="subtitle" x="750" y="1320" text-anchor="middle">Search, filters, sorting, and pagination operate on the loaded catalog.</text>
+</svg>

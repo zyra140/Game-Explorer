@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover free-to-play games and find your next favorite."
+    />
+    <title>Free Games Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Free Games Explorer — home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>free<span class="brand-accent">games</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link nav-link-active" href="#">Discover</a>
+        <a class="nav-link" href="#">Favorites <span class="favorite-count">0</span></a>
+      </nav>
+
+      <div class="topbar-note"><span class="status-dot"></span> Free-to-play games</div>
+    </header>
+
+    <main class="page-shell">
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT GAME IS WAITING</p>
+          <h1>Find your<br /><span>next world.</span></h1>
+          <p class="intro-description">
+            Discover free-to-play games, filter your way, and jump in.
+          </p>
+        </div>
+        <div class="intro-decoration" aria-hidden="true">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="decoration-cross cross-one">+</span>
+          <span class="decoration-cross cross-two">+</span>
+        </div>
+      </section>
+
+      <section class="search-panel" aria-label="Game search">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 4.2 4.2"></path>
+          </svg>
+          <span class="visually-hidden">Search games</span>
+          <input type="search" placeholder="Search games, genres, or platforms..." />
+          <kbd>⌘ K</kbd>
+        </label>
+        <button class="search-button" type="button">Search <span aria-hidden="true">↗</span></button>
+      </section>
+
+      <div class="catalog-layout">
+        <aside class="filters" aria-label="Game filters">
+          <div class="filter-heading">
+            <div>
+              <p class="section-kicker">REFINE YOUR RESULTS</p>
+              <h2>Filters</h2>
+            </div>
+            <button class="clear-button" type="button">Clear all</button>
+          </div>
+
+          <fieldset class="filter-group">
+            <legend>Genre</legend>
+            <label class="check-row"><input type="checkbox" checked /><span class="custom-check"></span><span>All genres</span><span class="filter-count">24</span></label>
+            <label class="check-row"><input type="checkbox" /><span class="custom-check"></span><span>MMORPG</span><span class="filter-count">8</span></label>
+            <label class="check-row"><input type="checkbox" /><span class="custom-check"></span><span>Shooters</span><span class="filter-count">6</span></label>
+            <label class="check-row"><input type="checkbox" /><span class="custom-check"></span><span>RPG</span><span class="filter-count">5</span></label>
+            <label class="check-row"><input type="checkbox" /><span class="custom-check"></span><span>Strategy</span><span class="filter-count">3</span></label>
+          </fieldset>
+
+          <fieldset class="filter-group platform-group">
+            <legend>Platform</legend>
+            <label class="check-row"><input type="checkbox" /><span class="custom-check"></span><span>PC (Windows)</span></label>
+            <label class="check-row"><input type="checkbox" /><span class="custom-check"></span><span>Browser</span></label>
+          </fieldset>
+
+          <div class="filter-tip">
+            <span class="tip-icon" aria-hidden="true">✦</span>
+            <div>
+              <strong>Explore without limits</strong>
+              <p>Every game in this catalog is free-to-play.</p>
+            </div>
+          </div>
+        </aside>
+
+        <section class="games-section" aria-labelledby="games-heading">
+          <div class="games-toolbar">
+            <div>
+              <p class="section-kicker">GAME CATALOG</p>
+              <h2 id="games-heading">Popular right now <span class="result-count">06</span></h2>
+            </div>
+            <label class="sort-control">
+              <span>Sort by:</span>
+              <select aria-label="Sort games">
+                <option>Popularity</option>
+                <option>Name A–Z</option>
+                <option>Release date</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="active-filters">
+            <span>Active:</span>
+            <span class="filter-chip">All games <span aria-hidden="true">×</span></span>
+          </div>
+
+          <div class="game-grid">
+            <article class="game-card">
+              <div class="game-art art-warframe">
+                <span class="art-label">ORBITAL<br />FRONTIER</span>
+                <span class="art-number">01</span>
+                <span class="platform-tag">PC</span>
+                <button class="heart-button" type="button" aria-label="Add Warframe to favorites">♡</button>
+              </div>
+              <div class="game-info">
+                <div class="game-title-row"><h3>Warframe</h3><span class="rating">★ 4.8</span></div>
+                <p class="game-meta">Action <span>·</span> MMO</p>
+                <div class="game-footer"><span class="genre-tag">SCI-FI</span><span class="play-link">View game <b>↗</b></span></div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-art art-albion">
+                <span class="art-label">WILD<br />KINGDOM</span>
+                <span class="art-number">02</span>
+                <span class="platform-tag">PC</span>
+                <button class="heart-button" type="button" aria-label="Add Albion Online to favorites">♡</button>
+              </div>
+              <div class="game-info">
+                <div class="game-title-row"><h3>Albion Online</h3><span class="rating">★ 4.6</span></div>
+                <p class="game-meta">MMORPG <span>·</span> Fantasy</p>
+                <div class="game-footer"><span class="genre-tag">SANDBOX</span><span class="play-link">View game <b>↗</b></span></div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-art art-finals">
+                <span class="art-label">BREAK<br />THE RULES</span>
+                <span class="art-number">03</span>
+                <span class="platform-tag">PC</span>
+                <button class="heart-button" type="button" aria-label="Add THE FINALS to favorites">♡</button>
+              </div>
+              <div class="game-info">
+                <div class="game-title-row"><h3>THE FINALS</h3><span class="rating">★ 4.7</span></div>
+                <p class="game-meta">Shooter <span>·</span> Action</p>
+                <div class="game-footer"><span class="genre-tag">FPS</span><span class="play-link">View game <b>↗</b></span></div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-art art-path">
+                <span class="art-label">DARKNESS<br />AWAKENS</span>
+                <span class="art-number">04</span>
+                <span class="platform-tag">PC</span>
+                <button class="heart-button" type="button" aria-label="Add Path of Exile to favorites">♡</button>
+              </div>
+              <div class="game-info">
+                <div class="game-title-row"><h3>Path of Exile</h3><span class="rating">★ 4.9</span></div>
+                <p class="game-meta">RPG <span>·</span> Action</p>
+                <div class="game-footer"><span class="genre-tag">DARK FANTASY</span><span class="play-link">View game <b>↗</b></span></div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-art art-lost-ark">
+                <span class="art-label">LEGENDS<br />RISE</span>
+                <span class="art-number">05</span>
+                <span class="platform-tag">PC</span>
+                <button class="heart-button" type="button" aria-label="Add Lost Ark to favorites">♡</button>
+              </div>
+              <div class="game-info">
+                <div class="game-title-row"><h3>Lost Ark</h3><span class="rating">★ 4.5</span></div>
+                <p class="game-meta">MMORPG <span>·</span> Fantasy</p>
+                <div class="game-footer"><span class="genre-tag">ADVENTURE</span><span class="play-link">View game <b>↗</b></span></div>
+              </div>
+            </article>
+
+            <article class="game-card">
+              <div class="game-art art-enlisted">
+                <span class="art-label">FRONTLINE<br />2026</span>
+                <span class="art-number">06</span>
+                <span class="platform-tag">PC</span>
+                <button class="heart-button" type="button" aria-label="Add Enlisted to favorites">♡</button>
+              </div>
+              <div class="game-info">
+                <div class="game-title-row"><h3>Enlisted</h3><span class="rating">★ 4.4</span></div>
+                <p class="game-meta">Shooter <span>·</span> Action</p>
+                <div class="game-footer"><span class="genre-tag">MILITARY</span><span class="play-link">View game <b>↗</b></span></div>
+              </div>
+            </article>
+          </div>
+
+          <nav class="pagination" aria-label="Pagination">
+            <button type="button" class="page-arrow" aria-label="Previous page">←</button>
+            <button type="button" class="page-number page-current" aria-current="page">1</button>
+            <button type="button" class="page-number">2</button>
+            <button type="button" class="page-number">3</button>
+            <span class="page-ellipsis">…</span>
+            <button type="button" class="page-number">8</button>
+            <button type="button" class="page-arrow" aria-label="Next page">→</button>
+          </nav>
+          <p class="preview-note">Static mockup — sample data, no JavaScript behavior.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

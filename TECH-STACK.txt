@@ -1,0 +1,41 @@
+Free Games Explorer — Project Stack
+
+Technologies
+- Vite — runs the local development server and prepares optimized application
+  files for production.
+- HTML5 — defines the structure and meaning of page elements such as headings,
+  forms, the game list, and buttons.
+- CSS — controls the page appearance, layout, colors, and responsive behavior
+  across screen sizes.
+- Vanilla JavaScript — handles application logic without frontend frameworks
+  such as React or Vue.
+- JavaScript ES Modules — split JavaScript into reusable files and let modules
+  import code from one another.
+
+Architecture and Data
+- MVC — an organizational pattern: the Model manages data, the View displays it,
+  and the Controller handles user actions and connects the Model with the View.
+- FreeToGame API — an external source of free-game data that the application
+  will fetch; no API key is required for basic access.
+- localStorage — browser storage used to keep favorite games between visits on
+  the same device.
+
+MVP Features
+- Game list — displays games fetched from the API.
+- Search, filtering, and sorting — help users find games by text, selected
+  criteria, and order.
+- Pagination — divides a long game list into smaller pages.
+- Game details — show more information about a selected game.
+- Favorites — let users save selected games in localStorage and return to them.
+
+Development Tools
+- Node.js (v20.20.0) — the runtime that lets development tools such as Vite run
+  outside the browser.
+- npm (v10.8.2) — the package manager used to install project dependencies and
+  run commands defined in package.json.
+
+Constraints
+- No frontend frameworks — the interface and application logic are written
+  directly.
+- No backend or database — the application fetches data directly from the API
+  and stores favorites locally in the browser.

@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1320" role="img" aria-labelledby="title description">
+  <title id="title">Free Games Explorer module responsibilities</title>
+  <desc id="description">Suggested responsibilities and example functions for each file in the proposed project structure.</desc>
+  <defs>
+    <style>
+      .background { fill: #111217; }
+      .panel { fill: #191a22; stroke: #2c2e3b; stroke-width: 1.5; }
+      .title { fill: #f3f1fa; font: 700 27px Arial, sans-serif; letter-spacing: 0.6px; }
+      .subtitle { fill: #9c9dab; font: 14px Arial, sans-serif; }
+      .panel-title { fill: #c7b5ff; font: 700 12px Arial, sans-serif; letter-spacing: 1.5px; }
+      .tree { fill: #e7e5ef; font: 14px Consolas, "Courier New", monospace; }
+      .tree-muted { fill: #a4a4b2; }
+      .card { fill: #22242d; stroke: #3a3d4c; stroke-width: 1.4; }
+      .card-controller { fill: #29243a; stroke: #9272d4; }
+      .card-model { fill: #202c33; stroke: #55a9bb; }
+      .card-service { fill: #202d2b; stroke: #59a98c; }
+      .card-view { fill: #242532; stroke: #6c78b4; }
+      .filename { fill: #f3f1fa; font: 700 14px Arial, sans-serif; }
+      .function { fill: #bca9fa; font: 12px Consolas, "Courier New", monospace; }
+      .detail { fill: #b7b7c4; font: 11.5px Arial, sans-serif; }
+      .note-title { fill: #ded8f2; font: 700 12px Arial, sans-serif; }
+      .note { fill: #aaaaba; font: 11.5px Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect class="background" width="1800" height="1320" rx="18" />
+  <text class="title" x="48" y="52">FREE GAMES EXPLORER — MODULE RESPONSIBILITIES</text>
+  <text class="subtitle" x="48" y="78">Example functions and logic boundaries for the proposed MVP structure</text>
+
+  <rect class="panel" x="40" y="108" width="500" height="1170" rx="14" />
+  <text class="panel-title" x="70" y="148">PROJECT TREE</text>
+  <text class="tree" x="70" y="190">
+    <tspan x="70" dy="0">free-games-explorer/</tspan>
+    <tspan x="70" dy="27" class="tree-muted">|-- index.html</tspan>
+    <tspan x="70" dy="27" class="tree-muted">|-- styles.css</tspan>
+    <tspan x="70" dy="27" class="tree-muted">|-- package.json</tspan>
+    <tspan x="70" dy="27" class="tree-muted">`-- src/</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |-- main.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |-- config.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |-- controller.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |-- model.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |-- helpers.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |-- services/</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |   |-- apiService.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    |   `-- storageService.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">    `-- views/</tspan>
+    <tspan x="70" dy="27" class="tree-muted">        |-- gamesView.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">        |-- gameDetailsView.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">        |-- searchView.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">        |-- filtersView.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">        |-- paginationView.js</tspan>
+    <tspan x="70" dy="27" class="tree-muted">        `-- favoritesView.js</tspan>
+  </text>
+
+  <rect x="64" y="790" width="452" height="206" rx="10" fill="#20212a" stroke="#373947" />
+  <text class="note-title" x="86" y="824">A useful rule of thumb</text>
+  <text class="note" x="86" y="853">
+    <tspan x="86">config.js: static shared values.</tspan>
+    <tspan x="86" dy="22">model.js: mutable application state and data logic.</tspan>
+    <tspan x="86" dy="22">helpers.js: small reusable pure functions.</tspan>
+    <tspan x="86" dy="22">controller.js: coordinates user actions and updates.</tspan>
+    <tspan x="86" dy="22">views/: DOM rendering and view-specific events.</tspan>
+  </text>
+  <rect x="64" y="1020" width="452" height="210" rx="10" fill="#20212a" stroke="#373947" />
+  <text class="note-title" x="86" y="1054">Keep the MVP manageable</text>
+  <text class="note" x="86" y="1083">
+    <tspan x="86">These are suggested function names, not requirements.</tspan>
+    <tspan x="86" dy="22">Create a module when its feature is implemented.</tspan>
+    <tspan x="86" dy="22">Avoid putting unrelated work into helpers.js.</tspan>
+    <tspan x="86" dy="22">Views should not fetch API data directly.</tspan>
+  </text>
+
+  <rect class="panel" x="565" y="108" width="1195" height="1170" rx="14" />
+  <text class="panel-title" x="595" y="148">FILES, EXAMPLE FUNCTIONS, AND RESPONSIBILITIES</text>
+
+  <rect class="card-view card" x="595" y="174" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="199">index.html</text>
+  <text class="function" x="615" y="222">&lt;script type="module" src="/src/main.js"&gt;</text>
+  <text class="detail" x="615" y="246">Semantic page structure and mount points for the views.</text>
+  <text class="detail" x="615" y="265">No application or API logic belongs in this file.</text>
+
+  <rect class="card-view card" x="1175" y="174" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="199">styles.css</text>
+  <text class="function" x="1195" y="222">.game-card, .filters, @media (...)</text>
+  <text class="detail" x="1195" y="246">Layout, visual states, and responsive styling.</text>
+  <text class="detail" x="1195" y="265">Keep presentation here; do not put data logic in CSS.</text>
+
+  <rect class="card" x="595" y="304" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="329">package.json</text>
+  <text class="function" x="615" y="352">"dev", "build", "preview"</text>
+  <text class="detail" x="615" y="376">Project metadata, Vite dependency, and npm scripts.</text>
+  <text class="detail" x="615" y="395">Scripts are commands, not application behavior.</text>
+
+  <rect class="card-controller card" x="1175" y="304" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="329">src/main.js</text>
+  <text class="function" x="1195" y="352">init()</text>
+  <text class="detail" x="1195" y="376">Application entry point; initializes the controller.</text>
+  <text class="detail" x="1195" y="395">Keep startup wiring small and easy to follow.</text>
+
+  <rect class="card" x="595" y="434" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="459">src/config.js</text>
+  <text class="function" x="615" y="482">API_BASE_URL, API_ENDPOINTS, RESULTS_PER_PAGE</text>
+  <text class="detail" x="615" y="506">Shared constants, including the favorites storage key.</text>
+  <text class="detail" x="615" y="525">Do not keep mutable application state here.</text>
+
+  <rect class="card-controller card" x="1175" y="434" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="459">src/controller.js</text>
+  <text class="function" x="1195" y="482">init(), controlSearch(), controlPage()</text>
+  <text class="detail" x="1195" y="506">Connects view events to model operations and rendering.</text>
+  <text class="detail" x="1195" y="525">Coordinates work; keep API and DOM details elsewhere.</text>
+
+  <rect class="card-model card" x="595" y="564" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="589">src/model.js</text>
+  <text class="function" x="615" y="612">loadGames(), getVisibleGames(), toggleFavorite()</text>
+  <text class="detail" x="615" y="636">Owns state: games, query, filters, sort, page, favorites.</text>
+  <text class="detail" x="615" y="655">Applies search, filtering, sorting, and pagination.</text>
+
+  <rect class="card" x="1175" y="564" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="589">src/helpers.js</text>
+  <text class="function" x="1195" y="612">normalizeText(), clampPage()</text>
+  <text class="detail" x="1195" y="636">Small reusable functions that do not own app state.</text>
+  <text class="detail" x="1195" y="655">Keep feature-specific logic in its model or view.</text>
+
+  <rect class="card-service card" x="595" y="694" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="719">src/services/apiService.js</text>
+  <text class="function" x="615" y="742">getGames(), getGameById(id)</text>
+  <text class="detail" x="615" y="766">Builds requests using config and calls fetch().</text>
+  <text class="detail" x="615" y="785">Checks HTTP errors and returns usable game data.</text>
+
+  <rect class="card-service card" x="1175" y="694" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="719">src/services/storageService.js</text>
+  <text class="function" x="1195" y="742">readFavorites(), writeFavorites(ids)</text>
+  <text class="detail" x="1195" y="766">Reads and writes favorite IDs in localStorage.</text>
+  <text class="detail" x="1195" y="785">Handles JSON serialization at the storage boundary.</text>
+
+  <rect class="card-view card" x="595" y="824" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="849">src/views/gamesView.js</text>
+  <text class="function" x="615" y="872">render(games), addHandlerGameClick(handler)</text>
+  <text class="detail" x="615" y="896">Renders game cards and reports user selections.</text>
+  <text class="detail" x="615" y="915">Does not fetch the catalog itself.</text>
+
+  <rect class="card-view card" x="1175" y="824" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="849">src/views/gameDetailsView.js</text>
+  <text class="function" x="1195" y="872">render(game), close()</text>
+  <text class="detail" x="1195" y="896">Displays and closes the selected game's details.</text>
+  <text class="detail" x="1195" y="915">Receives game data from the controller.</text>
+
+  <rect class="card-view card" x="595" y="954" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="979">src/views/searchView.js</text>
+  <text class="function" x="615" y="1002">addHandlerSearch(handler)</text>
+  <text class="detail" x="615" y="1026">Reads the search input and emits query changes.</text>
+  <text class="detail" x="615" y="1045">Optional: debounce rapid input events.</text>
+
+  <rect class="card-view card" x="1175" y="954" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="979">src/views/filtersView.js</text>
+  <text class="function" x="1195" y="1002">addHandlerFilter(handler), getFilterData()</text>
+  <text class="detail" x="1195" y="1026">Reads selected genre and platform values.</text>
+  <text class="detail" x="1195" y="1045">Emits filter changes; does not filter game data itself.</text>
+
+  <rect class="card-view card" x="595" y="1084" width="555" height="116" rx="9" />
+  <text class="filename" x="615" y="1109">src/views/paginationView.js</text>
+  <text class="function" x="615" y="1132">render(currentPage, totalPages), addHandlerClick(handler)</text>
+  <text class="detail" x="615" y="1156">Displays page controls and emits the selected page.</text>
+  <text class="detail" x="615" y="1175">The model determines which games belong to that page.</text>
+
+  <rect class="card-view card" x="1175" y="1084" width="555" height="116" rx="9" />
+  <text class="filename" x="1195" y="1109">src/views/favoritesView.js</text>
+  <text class="function" x="1195" y="1132">render(games), addHandlerRemove(handler)</text>
+  <text class="detail" x="1195" y="1156">Displays saved games and emits remove actions.</text>
+  <text class="detail" x="1195" y="1175">The model and storage service update favorite data.</text>
+
+  <text class="subtitle" x="595" y="1245">Function names are examples; keep each module focused on one responsibility.</text>
+</svg>
