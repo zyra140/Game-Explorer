@@ -633,6 +633,9 @@ kbd {
 .game-art::before {
   inset: 0;
   opacity: 0.8;
+  background:
+    radial-gradient(ellipse at 72% 45%, rgb(169 111 239 / 48%), transparent 23%),
+    linear-gradient(116deg, #182033 5%, #303b63 48%, #60477d 100%);
 }
 
 .game-art::after {
@@ -643,30 +646,6 @@ kbd {
   border: 1px solid rgb(255 255 255 / 19%);
   border-radius: 50%;
   box-shadow: 0 0 0 18px rgb(255 255 255 / 4%), 0 0 0 38px rgb(255 255 255 / 3%);
-}
-
-.art-warframe::before {
-  background: radial-gradient(ellipse at 72% 45%, rgb(193 98 246 / 64%), transparent 21%), linear-gradient(116deg, #10182c 5%, #253c68 45%, #6d3d89 100%);
-}
-
-.art-albion::before {
-  background: radial-gradient(ellipse at 80% 25%, rgb(255 202 103 / 62%), transparent 25%), linear-gradient(128deg, #202a31, #42614b 55%, #a36d42);
-}
-
-.art-finals::before {
-  background: radial-gradient(ellipse at 68% 45%, rgb(255 227 91 / 80%), transparent 22%), linear-gradient(118deg, #263340, #53665b 52%, #ad663b);
-}
-
-.art-path::before {
-  background: radial-gradient(ellipse at 73% 45%, rgb(224 122 67 / 57%), transparent 21%), linear-gradient(120deg, #191722, #48343c 53%, #9a5c43);
-}
-
-.art-lost-ark::before {
-  background: radial-gradient(ellipse at 74% 38%, rgb(104 185 242 / 76%), transparent 24%), linear-gradient(120deg, #20243b, #5c4987 54%, #be805e);
-}
-
-.art-enlisted::before {
-  background: radial-gradient(ellipse at 72% 45%, rgb(203 167 105 / 57%), transparent 22%), linear-gradient(120deg, #242b27, #55614d 52%, #9e714a);
 }
 
 .art-label {
