@@ -1,5 +1,7 @@
+const parentElement = document.querySelector('.game-grid');
+const spinner = document.querySelector('.loading-state');
+
 export const render = function (games) {
-    const parentElement = document.querySelector('.game-grid');
 
     if (!parentElement) {
         throw new Error("Game list element .game-grid was not found.");
@@ -76,4 +78,19 @@ export const render = function (games) {
     });
 
     parentElement.replaceChildren(fragment);
+    spinner.hidden = true;
+}
+
+export const renderLoading = function() {
+    spinner.hidden = false
+}
+
+export const renderError = function(message) {
+    parentElement.textContent = message;
+    spinner.hidden = true;
+}
+
+export const renderEmpty = function() {
+    parentElement.textContent = "No games found";
+    spinner.hidden = true;
 }

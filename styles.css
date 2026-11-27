@@ -598,6 +598,41 @@ kbd {
   gap: 16px;
 }
 
+.loading-state {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 38px 16px;
+  color: #a3a5b2;
+  font-size: 12px;
+}
+
+.loading-state[hidden] {
+  display: none;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #34313f;
+  border-top-color: #a78bfa;
+  border-radius: 50%;
+  animation: loading-spin 800ms linear infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation-duration: 1800ms;
+  }
+}
+
 .game-card {
   min-width: 0;
   overflow: hidden;

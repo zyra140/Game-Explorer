@@ -58,7 +58,7 @@
             <path d="m16 16 4.2 4.2"></path>
           </svg>
           <span class="visually-hidden">Search games</span>
-          <input type="search" placeholder="Search games, genres, or platforms..." />
+          <input class="search-input" type="search" placeholder="Search games, genres, or platforms..." />
           <kbd>⌘ K</kbd>
         </label>
         <button class="search-button" type="button">Search <span aria-hidden="true">↗</span></button>
@@ -117,6 +117,11 @@
           <div class="active-filters">
             <span>Active:</span>
             <span class="filter-chip">All games <span aria-hidden="true">×</span></span>
+          </div>
+
+          <div class="loading-state" role="status" aria-live="polite" hidden>
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <span class="visually-hidden">Loading games...</span>
           </div>
 
           <div class="game-grid">

@@ -2,6 +2,7 @@ import { getGames } from "./services/apiService";
 
 export const state = {
     games: [],
+    searchQuery: [],
 }
 
 /**
@@ -12,3 +13,7 @@ export const state = {
 export async function loadGames() {
     state.games = await getGames();
 }
+
+export const filterGames = function() {
+
+};
